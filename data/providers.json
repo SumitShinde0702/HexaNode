@@ -1,0 +1,31 @@
+{
+  "providers": [
+    {
+      "id": "provider-milk-fresh",
+      "name": "Fresh Dairy Co",
+      "products": ["milk", "yogurt", "cream"],
+      "tags": ["dairy", "local", "organic"],
+      "basePricePerUnit": 3.50,
+      "minOrderQuantity": 10,
+      "slaHours": 24
+    },
+    {
+      "id": "provider-milk-bulk",
+      "name": "Bulk Supply Inc",
+      "products": ["milk", "eggs", "bread"],
+      "tags": ["wholesale", "bulk", "discount"],
+      "basePricePerUnit": 2.80,
+      "minOrderQuantity": 50,
+      "slaHours": 48
+    },
+    {
+      "id": "provider-dairy-regional",
+      "name": "Regional Dairy Partners",
+      "products": ["milk", "cheese"],
+      "tags": ["dairy", "regional"],
+      "basePricePerUnit": 3.20,
+      "minOrderQuantity": 20,
+      "slaHours": 36
+    }
+  ]
+}

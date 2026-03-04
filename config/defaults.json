@@ -1,0 +1,19 @@
+{
+  "inventoryPath": "data/supermarket.json",
+  "providersPath": "data/providers.json",
+  "thresholdField": "threshold",
+  "quantityField": "quantity",
+  "reorderQuantityField": "reorderQuantity",
+  "negotiation": {
+    "maxRounds": 3,
+    "timeoutSeconds": 60
+  },
+  "verification": {
+    "minScoreThreshold": 0.7,
+    "requiredFields": ["product", "quantity", "providerId", "price"]
+  },
+  "chain": {
+    "name": "base-sepolia",
+    "usdcAddress": "0x036CbD53842c5426634e7929541eC2318f3dCF7e"
+  }
+}

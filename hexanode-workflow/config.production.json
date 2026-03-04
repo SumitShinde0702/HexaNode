@@ -1,0 +1,18 @@
+{
+  "providerBaseUrl": "${PROVIDER_BASE_URL}",
+  "deepseekBaseUrl": "https://api.deepseek.com",
+  "deepseekModel": "deepseek-chat",
+  "chainName": "base-sepolia",
+  "registryAddress": "${REGISTRY_ADDRESS}",
+  "paymentReceiverAddress": "${PAYMENT_RECEIVER_ADDRESS}",
+  "inventory": [],
+  "providers": [],
+  "negotiation": {
+    "maxRounds": 3,
+    "timeoutSeconds": 60
+  },
+  "verification": {
+    "minScoreThreshold": 0.7,
+    "requiredFields": ["product", "quantity", "providerId", "price"]
+  }
+}

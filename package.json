@@ -1,0 +1,13 @@
+{
+  "name": "hexanode",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n api,provider,web -c blue,magenta,green \"npm run dev:api\" \"npm run dev:provider\" \"npm run dev:web\"",
+    "dev:api": "npm start --prefix api",
+    "dev:provider": "npm run start --prefix provider",
+    "dev:web": "npm run dev --prefix hexanode-workflow/web"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

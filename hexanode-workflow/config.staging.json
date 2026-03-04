@@ -1,0 +1,98 @@
+{
+  "providerBaseUrl": "http://localhost:3456",
+  "deepseekBaseUrl": "https://api.deepseek.com",
+  "deepseekModel": "deepseek-chat",
+  "chainName": "ethereum-testnet-sepolia",
+  "registryAddress": "",
+  "paymentReceiverAddress": "0x90E289d524610802cC9468A37B34f8597Eaca901",
+  "inventory": [
+    {
+      "product": "milk",
+      "quantity": 12,
+      "unit": "gallons",
+      "threshold": 20,
+      "reorderQuantity": 50
+    },
+    {
+      "product": "eggs",
+      "quantity": 45,
+      "unit": "cartons",
+      "threshold": 30,
+      "reorderQuantity": 60
+    },
+    {
+      "product": "bread",
+      "quantity": 25,
+      "unit": "loaves",
+      "threshold": 15,
+      "reorderQuantity": 40
+    }
+  ],
+  "providers": [
+    {
+      "id": "provider-milk-fresh",
+      "name": "Fresh Dairy Co",
+      "products": [
+        "milk",
+        "yogurt",
+        "cream"
+      ],
+      "tags": [
+        "dairy",
+        "local",
+        "organic"
+      ],
+      "basePricePerUnit": 3.5,
+      "minOrderQuantity": 10,
+      "slaHours": 24,
+      "apiPath": "/supply/milk"
+    },
+    {
+      "id": "provider-milk-bulk",
+      "name": "Bulk Supply Inc",
+      "products": [
+        "milk",
+        "eggs",
+        "bread"
+      ],
+      "tags": [
+        "wholesale",
+        "bulk",
+        "discount"
+      ],
+      "basePricePerUnit": 2.8,
+      "minOrderQuantity": 50,
+      "slaHours": 48,
+      "apiPath": "/supply/milk"
+    },
+    {
+      "id": "provider-dairy-regional",
+      "name": "Regional Dairy Partners",
+      "products": [
+        "milk",
+        "cheese"
+      ],
+      "tags": [
+        "dairy",
+        "regional"
+      ],
+      "basePricePerUnit": 3.2,
+      "minOrderQuantity": 20,
+      "slaHours": 36,
+      "apiPath": "/supply/milk"
+    }
+  ],
+  "negotiation": {
+    "maxRounds": 3,
+    "timeoutSeconds": 60
+  },
+  "verification": {
+    "minScoreThreshold": 0.7,
+    "requiredFields": [
+      "product",
+      "quantity",
+      "providerId",
+      "price"
+    ]
+  }
+}

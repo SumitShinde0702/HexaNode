@@ -1,0 +1,27 @@
+{
+  "name": "Demo Supermarket",
+  "inventory": [
+    {
+      "product": "milk",
+      "quantity": 12,
+      "unit": "gallons",
+      "threshold": 20,
+      "reorderQuantity": 50
+    },
+    {
+      "product": "eggs",
+      "quantity": 45,
+      "unit": "cartons",
+      "threshold": 30,
+      "reorderQuantity": 60
+    },
+    {
+      "product": "bread",
+      "quantity": 25,
+      "unit": "loaves",
+      "threshold": 15,
+      "reorderQuantity": 40
+    }
+  ],
+  "updatedAt": ""
+}

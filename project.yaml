@@ -1,0 +1,17 @@
+# HexaNode - CRE Project Configuration
+# https://docs.chain.link/cre/reference/project-configuration-ts
+# CRE CLI recognizes ethereum-testnet-sepolia; Base Sepolia may need cre update
+
+staging-settings:
+  rpcs:
+    - chain-name: ethereum-mainnet
+      url: https://ethereum.publicnode.com
+    - chain-name: ethereum-testnet-sepolia
+      url: https://ethereum-sepolia-rpc.publicnode.com
+
+production-settings:
+  rpcs:
+    - chain-name: ethereum-mainnet
+      url: https://ethereum.publicnode.com
+    - chain-name: ethereum-testnet-sepolia
+      url: https://ethereum-sepolia-rpc.publicnode.com

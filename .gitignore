@@ -1,0 +1,8 @@
+.env
+node_modules/
+bun.lock
+*.log
+dist/
+.cre/
+artifacts/
+*.wasm
