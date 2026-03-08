@@ -1,0 +1,12 @@
+{
+  "name": "create-hexanode-agent",
+  "version": "1.0.0",
+  "description": "Initialize HexaNode with your agent config",
+  "type": "module",
+  "bin": {
+    "create-hexanode-agent": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}

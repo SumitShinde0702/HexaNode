@@ -10870,9 +10870,6 @@ var defaultLookup = new NetworkLookup({
   testnetBySelectorByFamily
 });
 var getNetwork = (options) => defaultLookup.find(options);
-function consensusMedianAggregation() {
-  return simpleConsensus(AggregationType.MEDIAN);
-}
 function consensusIdenticalAggregation() {
   return simpleConsensus(AggregationType.IDENTICAL);
 }
@@ -15931,7 +15928,7 @@ var onProcurementTrigger = (runtime2) => {
       throw new Error("DEEPSEEK_API_KEY missing or invalid");
     }
     const httpClient2 = new ClientCapability2;
-    terms = httpClient2.sendRequest(runtime2, (req, n, p) => negotiateWithLLM(req, apiKey, config.deepseekBaseUrl, config.deepseekModel, n, p), consensusMedianAggregation())(need, provider).result();
+    terms = httpClient2.sendRequest(runtime2, (req, n, p) => negotiateWithLLM(req, apiKey, config.deepseekBaseUrl, config.deepseekModel, n, p), consensusIdenticalAggregation())(need, provider).result();
   } catch (e) {
     const msg = e instanceof Error ? e.message : String(e);
     logState(runtime2, "negotiate", { error: msg });

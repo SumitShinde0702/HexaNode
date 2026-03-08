@@ -105,6 +105,24 @@ Open http://localhost:5173 — add agents (companies) and inventory. Data is sav
 node scripts/merge-config.js
 ```
 
+### 6. Infra: Create Agents via API
+
+Register agents and get runnable config in one flow. See [infra/README.md](infra/README.md) for full docs.
+
+```bash
+# Start infra API
+cd infra && npm install && npm start
+
+# Register a buyer (in another terminal)
+curl -X POST http://localhost:3002/v1/agents -H "Content-Type: application/json" \
+  -d '{"type":"buyer","inventory":[{"product":"milk","quantity":12,"unit":"gallons","threshold":20,"reorderQuantity":50}]}'
+
+# Configure project with agent id from response
+node infra/cli/index.js <agent-id>
+
+# Then run provider + simulate as usual
+```
+
 ---
 
 ## Configuration (No Hardcoding)

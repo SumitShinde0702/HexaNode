@@ -13,7 +13,6 @@ import {
   getNetwork,
   bytesToHex,
   hexToBase64,
-  consensusMedianAggregation,
   consensusIdenticalAggregation,
   type Runtime,
   type HTTPSendRequester,
@@ -166,7 +165,7 @@ const fetchWithPayment = (
 function verifyFulfillment(config: Config, data: FulfillmentData): boolean {
   const required = config.verification.requiredFields
   for (const field of required) {
-    if (!(field in data) || (data as Record<string, unknown>)[field] == null) {
+    if (!(field in data) || (data as unknown as Record<string, unknown>)[field] == null) {
       return false
     }
   }
@@ -211,7 +210,7 @@ const onProcurementTrigger = (runtime: Runtime<Config>): Record<string, unknown>
         runtime,
         (req, n: ProcurementNeed, p: Provider) =>
           negotiateWithLLM(req, apiKey, config.deepseekBaseUrl, config.deepseekModel, n, p),
-        consensusMedianAggregation<NegotiatedTerms>()
+        consensusIdenticalAggregation<NegotiatedTerms>()
       )(need, provider)
       .result()
   } catch (e) {
@@ -405,7 +404,7 @@ const onProcurementTrigger = (runtime: Runtime<Config>): Record<string, unknown>
 const initWorkflow = (config: Config) => {
   const cron = new CronCapability()
   const schedule = "*/60 * * * * *"
-  return [handler(cron.trigger({ schedule }), onProcurementTrigger)]
+  return [handler(cron.trigger({ schedule }), onProcurementTrigger as any)]
 }
 
 export async function main() {

@@ -79,9 +79,14 @@ export default function Dashboard() {
           <Link to="/" className="text-xl font-semibold">
             Hexa<span className="text-accent">Node</span>
           </Link>
-          <Link to="/" className="text-muted hover:text-gray-200 text-sm">
-            ← Back
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link to="/api-docs" className="text-muted hover:text-accent text-sm font-medium transition-colors">
+              API Docs
+            </Link>
+            <Link to="/" className="text-muted hover:text-gray-200 text-sm">
+              ← Back
+            </Link>
+          </div>
         </div>
       </nav>
 
